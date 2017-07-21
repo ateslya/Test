@@ -1,6 +1,6 @@
 {
-  "version": "1.0.0",
   "name": "links",
+  "version": "1.0.0",
   "scripts": {
     "start": "concurrent \"npm run tsc:w\" \"npm run lite\" ",
     "lite": "lite-server",
@@ -17,15 +17,19 @@
     "@angular/platform-browser-dynamic": "~4.0.0",
     "@angular/router": "~4.0.0",
     "angular-in-memory-web-api": "~0.3.0",
-    "systemjs": "0.19.40",
+    "bootstrap": "^3.3.7",
+    "commonjs": "0.0.1",
     "core-js": "^2.4.1",
-    "rxjs": "5.0.1",
+    "corejs": "^1.0.0",
+    "reflectjs": "0.0.1",
+    "rxjs": "5.4.2",
+    "systemjs": "^0.19.47",
     "zone.js": "^0.8.4"
   },
   "devDependencies": {
     "@types/node": "^6.0.46",
     "concurrently": "^3.2.0",
     "lite-server": "^2.2.2",
-    "typescript": "~2.1.0"
+    "typescript": "^2.1.6"
   }
 }

@@ -1,14 +1,14 @@
-п»ї(function (global) {
+(function (global) {
     System.config({
         paths: {
-            // РїСЃРµРІРґРѕРЅРёРј РґР»СЏ РїСѓС‚Рё Рє РјРѕРґСѓР»СЏРј
-            'npm:': 'node_modules/'
+            // псевдоним для пути к модулям
+            'npm:': 'LinksApp/node_modules/'
         },
-        // СѓРєР°Р·С‹РІР°РµРј Р·Р°РіСЂСѓР·С‡РёРєСѓ System, РіРґРµ РёСЃРєР°С‚СЊ РјРѕРґСѓР»Рё
+        // указываем загрузчику System, где искать модули
         map: {
-            // РЅР°С€Рµ РїСЂРёР»РѕР¶РµРЅРёРµ Р±СѓРґРµС‚ РЅР°С…РѕРґРёС‚СЊСЃСЏ РІ РїР°РїРєРµ app
-            app: 'View/Home/app',
-            // РїР°РєРµС‚С‹ angular
+            // наше приложение будет находиться в папке app
+            app: 'LinksApp/Views/src/app',
+            // пакеты angular
             '@angular/core': 'npm:@angular/core/bundles/core.umd.js',
             '@angular/common': 'npm:@angular/common/bundles/common.umd.js',
             '@angular/compiler': 'npm:@angular/compiler/bundles/compiler.umd.js',
@@ -17,11 +17,11 @@
             '@angular/http': 'npm:@angular/http/bundles/http.umd.js',
             '@angular/router': 'npm:@angular/router/bundles/router.umd.js',
             '@angular/forms': 'npm:@angular/forms/bundles/forms.umd.js',
-            // РѕСЃС‚Р°Р»СЊРЅС‹Рµ РїР°РєРµС‚С‹
+            // остальные пакеты
             'rxjs': 'npm:rxjs',
             'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js'
         },
-        // РїР°РєРµС‚С‹, РєРѕС‚РѕСЂС‹Рµ СѓРєР°Р·С‹РІР°СЋС‚ Р·Р°РіСЂСѓР·С‡РёРєСѓ System, РєР°Рє Р·Р°РіСЂСѓР¶Р°С‚СЊ С„Р°Р№Р»С‹ Р±РµР· РёРјРµРЅРё Рё СЂР°СЃС€РёСЂРµРЅРёСЏ
+        // пакеты, которые указывают загрузчику System, как загружать файлы без имени и расширения
         packages: {
             app: {
                 main: './main.js',
