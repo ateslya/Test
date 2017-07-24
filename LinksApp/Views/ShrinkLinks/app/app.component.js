@@ -10,26 +10,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
+var http_service_1 = require("./http.service");
 var AppComponent = (function () {
-    function AppComponent() {
-        this.URL = '';
-        this.log("constructor");
+    function AppComponent(httpService) {
+        this.httpService = httpService;
+        this.done = false;
     }
-    AppComponent.prototype.ngOnInit = function () { this.log("onInit"); };
-    AppComponent.prototype.ngOnDestroy = function () { this.log("onDestroy"); };
-    AppComponent.prototype.log = function (msg) {
-        console.log(msg);
-    };
     AppComponent.prototype.zipURL = function (URL) {
-        console.log(URL);
-        //this.phones.push(new Phone(title, price, company));
+        var _this = this;
+        this.httpService.postData(URL).subscribe(function (data) {
+            _this.newURL = data;
+            _this.done = true;
+        });
     };
     AppComponent = __decorate([
         core_1.Component({
-            selector: 'my-app',
-            templateUrl: 'LinksApp/Views/src/app/app.component.html'
+            selector: 'shrink-links',
+            templateUrl: '/LinksApp/Views/ShrinkLinks/app/app.component.html',
+            providers: [http_service_1.HttpService]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [http_service_1.HttpService])
     ], AppComponent);
     return AppComponent;
 }());

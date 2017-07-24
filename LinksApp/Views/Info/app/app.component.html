@@ -1,0 +1,22 @@
+﻿<div style="width: 60%;	height:200px; margin: 0 auto;">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Дата создания</th>
+                <th>Оригинальный адресс</th>
+                <th>Короткий адресс</th>
+                <th>Количество переходов</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let link of links">
+                <td>{{link.Id}}</td>
+                <td>{{link.CreateDate | date: 'dd/MM/yyyy'}}</td>
+                <td><a href="{{link.OriginLink}}">{{link.OriginLink}}</a></td>
+                <td><a href="{{link.ShortLink}}">{{link.ShortLink}}</a></td>
+                <td>{{link.RedirectCount}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

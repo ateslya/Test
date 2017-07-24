@@ -1,0 +1,12 @@
+﻿@{
+    ViewBag.Title = "Сжатие ссылки";
+}
+<script src="~/Views/ShrinkLinks/systemjs.config.js"></script>
+<script>
+    System.import('shrinkLinks')
+        .catch(function (err) {
+            console.error(err);
+        });
+</script>
+
+<shrink-links>Загрузка...</shrink-links>
